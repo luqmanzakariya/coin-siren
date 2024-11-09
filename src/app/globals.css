@@ -10,7 +10,9 @@
     --white-solid: 255 255 255;
     --black-primary: 52 55 65;
     --black-secondary: 94 98 111;
+    --black-menu: 52 64 84;
     --footer-bg: 251 251 251;
+    --primary-blue: 74 119 255;
   }
 
   .poppins-black-primary {
@@ -19,16 +21,37 @@
   .poppins-black-secondary {
     @apply text-[13px] leading-[19.5px] font-black text-blackSecondary;
   }
+  .text-navbar {
+    @apply text-base leading-6 font-black text-whiteSolid;
+  }
+  .text-button-primary {
+    @apply text-base leading-6 font-black;
+  }
+  .text-sm-medium {
+    @apply text-sm font-medium leading-5 text-blackMenu hover:font-[700] hover:leading-[21px];
+  }
 }
 
 @layer components {
   .backgroundImage {
     /* height: 914px; */
-    width: 100vw;
+    width: 100%;
     background-image: url('/assets/images/bg-desktop.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+  }
+
+  .button-primary {
+    @apply px-6 py-[6px] bg-whiteSolid rounded-lg text-button-primary text-primaryBlue text-center min-w-[107px];
+  }
+
+  .navbar {
+    @apply px-4 pt-[13px] pb-[11px];
+  }
+
+  .page-component {
+    @apply lg:mx-auto lg:max-w-[1200px];
   }
 
   .footer {
