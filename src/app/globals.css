@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #ffffff;
+    --foreground: #171717;
+    --black-solid: 0 0 0;
+    --white-solid: 255 255 255;
+    --black-primary: 52 55 65;
+    --black-secondary: 94 98 111;
+    --footer-bg: 251 251 251;
+  }
+
+  .poppins-black-primary {
+    @apply text-[14px] leading-[21px] font-black text-blackPrimary;
+  }
+  .poppins-black-secondary {
+    @apply text-[13px] leading-[19.5px] font-black text-blackSecondary;
+  }
+}
+
+@layer components {
+  .backgroundImage {
+    /* height: 914px; */
+    width: 100vw;
+    background-image: url('/assets/images/bg-desktop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .footer {
+    @apply px-4 pt-[64px] lg:pt-[80px] pb-[60px] bg-footerBg;
+  }
+
+  .list-card-footer {
+    @apply mt-[18px] grid grid-cols-2 gap-2 lg:mt-0 lg:flex lg:gap-[16px] lg:w-[796px];
+  }
+
+  .footer-card {
+    @apply py-4 pl-4 pr-2 lg:pr-4 bg-whiteSolid rounded-xl lg:min-w-[187px] lg:h-[142px];
+  }
+}
