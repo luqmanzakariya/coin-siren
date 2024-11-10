@@ -27,7 +27,97 @@ const HomePages = ({ dataCardLanding, dataCardHorizontal, dataMobileCheckbox }: 
   const containerRef = useRef<HTMLDivElement>(null);
   const interval = 5000;
 
+  const chatBoxFirstRef = useRef(null);
+  const titleRef = useRef(null);
+  const descriptionRef = useRef(null);
+  const cardLandingRef = useRef(null);
+  const cardHorizontalRef = useRef(null);
+  const sliderRef = useRef(null);
+  const chatBoxSecondRef = useRef(null);
+
   useEffect(() => {
+    gsap.fromTo(
+      chatBoxFirstRef.current,
+      {
+        opacity: 0,
+        duration: 1,
+      },
+      {
+        opacity: 1,
+        duration: 1,
+        delay: 1.5,
+      },
+    );
+
+    gsap.fromTo(
+      titleRef.current,
+      {
+        y: 40,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.5,
+      },
+    );
+
+    gsap.fromTo(
+      descriptionRef.current,
+      {
+        y: 40,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.5,
+        delay: 0.5,
+      },
+    );
+
+    gsap.fromTo(
+      cardLandingRef.current,
+      {
+        y: 40,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.5,
+        delay: 1,
+      },
+    );
+
+    gsap.fromTo(
+      cardHorizontalRef.current,
+      {
+        y: 40,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.5,
+        delay: 1.5,
+      },
+    );
+
+    gsap.fromTo(
+      sliderRef.current,
+      {
+        y: 40,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.5,
+        delay: 1,
+      },
+    );
+
     const container = containerRef.current;
     if (!container) return;
 
@@ -62,36 +152,47 @@ const HomePages = ({ dataCardLanding, dataCardHorizontal, dataMobileCheckbox }: 
             <ChatBubble
               title="풀타임, 파트타임"
               style="bg-lightBlue text-whiteSolid lg:bg-whiteSolid lg:text-lightBluePrimary"
+              type="left"
+              innerRef={chatBoxFirstRef}
             />
-            <div className="text-header">
+            <div ref={titleRef} className="text-header">
               최고의 실력을 가진
               <br />
               외국인 인재를 찾고 계신가요?
             </div>
-            <div className="mt-4 text-placeholder lg:hidden">
-              법률 및 인사관리 부담없이 1주일 이내에 원격으로 채용해보세요.
+            <div ref={descriptionRef}>
+              <div className="mt-4 text-placeholder lg:hidden">
+                법률 및 인사관리 부담없이 1주일 이내에 원격으로 채용해보세요.
+              </div>
+              <div className="hidden lg:block mt-4 text-placeholder">
+                법률 및 인사관리 부담없이 <br />
+                1주일 이내에 원격으로 채용해보세요
+              </div>
+              <div className="hidden lg:block mt-6 text-placeholder text-lg text-whiteSolid leading-[27px]">
+                개발자가 필요하신가요?
+              </div>
             </div>
-            <div className="hidden lg:block mt-4 text-placeholder">
-              법률 및 인사관리 부담없이 <br />
-              1주일 이내에 원격으로 채용해보세요
-            </div>
-            <div className="hidden lg:block mt-6 text-placeholder text-lg text-whiteSolid leading-[27px]">
-              개발자가 필요하신가요?
-            </div>
-            <div className="hidden lg:flex mt-[60px] w-fit items-start gap-[48px]">
+            <div ref={cardLandingRef} className="hidden lg:flex mt-[60px] w-fit items-start gap-[48px]">
               {dataCardLanding.map(({ key, title, description }) => (
                 <CardLanding key={key} title={title} description={description} />
               ))}
             </div>
           </div>
-          <div className="mt-9">
+          <div ref={sliderRef} className="mt-9">
             <div className="flex flex-col items-center">
-              <ChatBubble title="월 100만원" style="bg-lightGreen text-greenPrimary" />
+              <ChatBubble
+                title="월 100만원"
+                style="bg-lightGreen text-greenPrimary"
+                type="center"
+                innerRef={chatBoxSecondRef}
+              />
             </div>
             <SliderCardComponent />
           </div>
         </div>
-        <div className="hidden lg:inline-flex mt-6 lg:mt-[60px] overflow-hidden relative w-full">
+        <div
+          ref={cardHorizontalRef}
+          className="hidden lg:inline-flex mt-6 lg:mt-[60px] overflow-hidden relative w-full">
           <div ref={containerRef} className="flex gap-[10px]">
             {dataCardHorizontal.map(({ id, title }, index) => (
               <CardHorizontal key={id} title={title} index={id} />
