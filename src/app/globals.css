@@ -15,6 +15,11 @@
     --primary-blue: 74 119 255;
     --light-blue: 139 196 255;
     --light-blue-primary: 64 226 232;
+    --black-card: 36 37 47;
+    --grey-primary: 193 197 207;
+    --light-green: 233 247 239;
+    --green-primary: 0 198 150;
+    --yellow-primary: 251 255 35;
   }
 
   .poppins-black-primary {
