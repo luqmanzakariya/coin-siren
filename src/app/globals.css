@@ -13,6 +13,8 @@
     --black-menu: 52 64 84;
     --footer-bg: 251 251 251;
     --primary-blue: 74 119 255;
+    --light-blue: 139 196 255;
+    --light-blue-primary: 64 226 232;
   }
 
   .poppins-black-primary {
@@ -29,6 +31,12 @@
   }
   .text-sm-medium {
     @apply text-sm font-medium leading-5 text-blackMenu hover:font-[700] hover:leading-[21px];
+  }
+  .text-header {
+    @apply text-[36px] lg:text-[48px] leading-[46.8px] lg:leading-[62.4px] font-black text-whiteSolid;
+  }
+  .text-placeholder {
+    @apply text-lg lg:text-[24px] leading-[27px] lg:leading-[34px] font-black text-whiteSolid/[0.8] lg:text-whiteSolid/[0.9];
   }
 }
 
@@ -51,7 +59,7 @@
   }
 
   .page-component {
-    @apply lg:mx-auto lg:max-w-[1200px];
+    @apply px-4 pt-9 lg:pt-[61px] pb-[60px] lg:pb-[108px];
   }
 
   .footer {
@@ -64,5 +72,13 @@
 
   .footer-card {
     @apply py-4 pl-4 pr-2 lg:pr-4 bg-whiteSolid rounded-xl lg:min-w-[187px] lg:h-[142px];
+  }
+
+  .chat-buble {
+    @apply mb-4 text-lg leading-[27px] font-black py-[6px] px-[12px] w-fit rounded-lg relative z-0;
+  }
+
+  .card-landing {
+    @apply max-w-[161px] pt-2 border-t-[1px] border-whiteSolid;
   }
 }

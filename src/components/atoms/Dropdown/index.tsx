@@ -45,7 +45,7 @@ const DropdownButton = ({ title }: DropdownButtonProps) => {
 
       <div
         ref={dropdownRef}
-        className="absolute lg:top-full right-0 lg:left-0 mt-2 w-[240px] rounded-lg bg-whiteSolid shadow-lg overflow-hidden">
+        className="absolute z-10 lg:top-full right-0 lg:left-0 mt-2 w-[240px] rounded-lg bg-whiteSolid shadow-lg overflow-hidden">
         <div className="flex flex-col">
           <Link href="/" className="px-4 py-[10px] text-sm-medium">
             채용

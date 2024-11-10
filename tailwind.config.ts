@@ -20,6 +20,8 @@ const config: Config = {
         footerBg: 'rgb(var(--footer-bg) / <alpha-value>)',
         whiteSolid: 'rgb(var(--white-solid) / <alpha-value>)',
         primaryBlue: 'rgb(var(--primary-blue) / <alpha-value>)',
+        lightBlue: 'rgb(var(--light-blue) / <alpha-value>)',
+        lightBluePrimary: 'rgb(var(--light-blue-primary) / <alpha-value>)',
       },
     },
   },
