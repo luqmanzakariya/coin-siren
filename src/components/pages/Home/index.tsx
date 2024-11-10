@@ -7,67 +7,23 @@ import SliderCardComponent from '@/components/organisms/Slider';
 import CardHorizontal from '@/components/molecules/Card/cardHorizontal';
 import IconCheckBox from '@/components/atoms/Icon/checkBox';
 
-const dataCardLanding = [
-  {
-    key: 0,
-    title: '평균 월 120만원',
-    description: '임금을 해당 국가를 기준으로 계산합니다.',
-  },
-  {
-    key: 1,
-    title: '최대 3회 인력교체',
-    description: '막상 채용해보니 맞지 않아도 걱정하지 마세요. ',
-  },
-  {
-    key: 2,
-    title: '평균 3일, 최대 10일',
-    description: '급하게 사람이 필요한 경우에도 빠른 채용이 가능합니다.',
-  },
-];
+interface HomePagesProps {
+  dataCardLanding: {
+    key: number;
+    title: string;
+    description: string;
+  }[];
+  dataCardHorizontal: {
+    id: number;
+    title: string;
+  }[];
+  dataMobileCheckbox: {
+    id: number;
+    title: string;
+  }[];
+}
 
-const dataCardHorizontal = [
-  {
-    id: 0,
-    title: '해외 마케팅',
-  },
-  {
-    id: 1,
-    title: '퍼블리셔',
-  },
-  {
-    id: 2,
-    title: '캐드원(제도사)',
-  },
-  {
-    id: 3,
-    title: '해외 세일즈',
-  },
-  {
-    id: 4,
-    title: '해외 CS',
-  },
-];
-
-const dataMobileCheckbox = [
-  {
-    id: 0,
-    title: '한국어 능력',
-  },
-  {
-    id: 1,
-    title: '업무 수행 능력',
-  },
-  {
-    id: 2,
-    title: '겸업 여부',
-  },
-  {
-    id: 2,
-    title: '평판 조회',
-  },
-];
-
-const HomePages = () => {
+const HomePages = ({ dataCardLanding, dataCardHorizontal, dataMobileCheckbox }: HomePagesProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const interval = 5000;
 
