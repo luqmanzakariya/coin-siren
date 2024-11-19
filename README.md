@@ -15,3 +15,7 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+
+## Deployed on vercel
+You can see the deployed version on vercel: https://coinsiren.luqmanzakariya.com/
